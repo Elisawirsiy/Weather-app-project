@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Roboto:ital,wght@0,100;0,900;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/2d97e432c0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather Loop!🤩</h1>
+      <span class="border ml-50">
+        <div class="card section w-auto p-3" style="background-color: #eee">
+          <div class="card-body">
+            <div class="position-relative">
+              <h3>
+                <span
+                  class="
+                    choose-temperature
+                    position-absolute
+                    top-0
+                    start-0
+                    lh-1
+                    border border-2
+                    rounded
+                    border-secondary
+                  "
+                  ><a href="#" class="text-decoration-none" id="celsius-link"
+                    >°C</a
+                  >
+                  |
+                  <a href="#" class="text-decoration-none" id="fahrenheit-link"
+                    >°F</a
+                  ></span
+                >
+              </h3>
+              <div class="position-absolute top-0 end-0">
+                <form class="search-city" id="search-city">
+                  <input
+                    type="text"
+                    id="city-name"
+                    placeholder="Enter city"
+                    autofocus
+                  />
+                  <input type="submit" value="search" />
+                  <button class="btn btn-success" id="current-location-button">
+                    Current
+                  </button>
+                </form>
+              </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <h2>
+              <strong
+                ><span id="city">Turku</span>, <span id="country">FI</span>
+              </strong>
+            </h2>
+            <p id="date">
+              <span class="date">Friday, 21 May</span> <br /><span id="time"
+                >15:00</span
+              >
+            </p>
+
+            <i class="fas fa-sun sun-icon" id="weather-icon"></i>
+
+            <br />
+            <span id="description">sunny</span>
+
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                Low <br /><span id="low">0</span>°
+              </li>
+              <li class="list-inline-item main-temperature">
+                <strong><span id="temperature">0</span></strong
+                >°
+              </li>
+              <li class="list-inline-item">
+                High <br />
+                <span id="high">0</span>°
+              </li>
+            </ul>
+
+            <span class="fst-italic feeling"
+              >Feels like <span id="feeling">0</span>°
+            </span>
+
+            <br />
+            <br />
+            <div
+              class="alert alert-info"
+              id="alert"
+              role="alert"
+              style="width: 400px"
+            >
+              It's hot out here, stay hydrated!
+            </div>
+            <br />
+            <br />
+            <div
+              class="card w-400"
+              style="color: rgb(3, 51, 3); background-color: aquamarine"
+            >
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    Sunrise <br />
+                    <span id="sunrise">04:12</span>
+                  </div>
+                  <div class="col">
+                    Precipitation <br />
+                    <span id="precipitation">0,5</span>cm
+                  </div>
+                  <div class="col">
+                    Humidity <br />
+                    <span id="humidity">43</span>%
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    Sunset <br />
+                    <span id="sunset">22:45</span>
+                  </div>
+                  <div class="col">
+                    Chance of rain <br />
+                    <span id="chance-rain">10</span>%
+                  </div>
+                  <div class="col">
+                    Wind <br />
+                    <span id="wind">4</span>m/s
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+
+            <div class="row">
+              <div class="col">
+                SAT <br /><i class="fas fa-cloud-sun"></i> <br />
+                6&deg|12&deg
+              </div>
+              <div class="col">
+                SUN <br /><i class="fas fa-cloud-rain"></i> <br />
+                5&deg|13&deg
+              </div>
+              <div class="col">
+                MON <br /><i class="fas fa-cloud-rain"></i><br />4&deg|13&deg
+              </div>
+              <div class="col">
+                TUE<br /><i class="fas fa-cloud-rain"></i><br />6&deg|12&deg
+              </div>
+              <div class="col">
+                WED <br /><i class="fas fa-cloud-rain"></i><br />6&deg|14&deg
+              </div>
+            </div>
+          </div>
+        </div>
+      </span>
+    </div>
+    <footer>
+      <small>Coded by <em>Elizabeth Wirsiy</em></small>
+    </footer>
+    <script src="src/index.js"></script>
+  </body>
+</html>
