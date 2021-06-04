@@ -24,14 +24,13 @@ h3 {
   font-family: "Roboto", sans-serif;
 }
 
-.sun-icon {
-  color: blue;
-  font-family: "Roboto", sans-serif;
-  font-size: 100px;
-}
 .main-temperature {
   font-family: "Roboto", sans-serif;
   font-size: 100px;
+}
+.active {
+  color: black;
+  cursor: default;
 }
 .current-temperature {
   padding: 0;

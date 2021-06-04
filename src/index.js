@@ -54,6 +54,7 @@ function displayWeatherParameter(response) {
   document.querySelector(`#date`).innerHTML = formatDate(
     response.data.dt * 1000
   );
+  celsiusTemp = response.data.main.temp; //variable has been created as a global var
   document.querySelector(`#temperature`).innerHTML = Math.round(
     response.data.main.temp
   );
@@ -97,8 +98,6 @@ function getSearchedCity(event) {
   searchCity(cityName);
 }
 
-searchCity(`Bamenda`);
-
 let searchForm = document.querySelector("#search-city");
 searchForm.addEventListener("submit", getSearchedCity);
 
@@ -119,3 +118,25 @@ function getPosition(event) {
 
 let currentLocationButton = document.querySelector(`#current-location-button`);
 currentLocationButton.addEventListener("click", getPosition);
+
+// Temperature conversions
+let celsiusTemp = null;
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = Math.round((celsiusTemp * 9) / 5 + 32);
+  document.querySelector(`#temperature`).innerHTML = fahrenheitTemp;
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  document.querySelector(`#temperature`).innerHTML = Math.round(celsiusTemp);
+}
+
+let fahrenheitLink = document.querySelector(`#fahrenheit-link`);
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector(`#celsius-link`);
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+searchCity(`Bamenda`);
