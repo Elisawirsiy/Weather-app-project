@@ -119,17 +119,21 @@ function getPosition(event) {
 let currentLocationButton = document.querySelector(`#current-location-button`);
 currentLocationButton.addEventListener("click", getPosition);
 
-// Temperature conversions
+// Temperature conversions and active links
 let celsiusTemp = null;
 
 function showFahrenheitTemp(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemp = Math.round((celsiusTemp * 9) / 5 + 32);
   document.querySelector(`#temperature`).innerHTML = fahrenheitTemp;
 }
 
 function showCelsiusTemp(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   document.querySelector(`#temperature`).innerHTML = Math.round(celsiusTemp);
 }
 
