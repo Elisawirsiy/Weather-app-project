@@ -56,8 +56,11 @@ function displayWeatherParameter(response) {
   );
   document.querySelector(`#description`).innerHTML =
     response.data.weather[0].main;
-  document.querySelector(`#weather-icon`).innerHTML =
-    response.data.weather[0].icon;
+  document.querySelector(`#icon`).innerHTML = icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
   document.querySelector(`#humidity`).innerHTML = response.data.main.humidity;
   document.querySelector(`#sunrise`).innerHTML = response.data.sys.sunrise;
 
