@@ -61,7 +61,7 @@ function displayWeatherParameter(response) {
     response.data.weather[0].main;
   document.querySelector(`#icon`).innerHTML = icon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
   document.querySelector(`#humidity`).innerHTML = response.data.main.humidity;
@@ -69,7 +69,9 @@ function displayWeatherParameter(response) {
 
   document.querySelector(`#sunset`).innerHTML = response.data.sys.sunset;
 
-  document.querySelector(`#wind`).innerHTML = response.data.wind.speed;
+  document.querySelector(`#wind`).innerHTML = Math.round(
+    response.data.wind.speed
+  );
 
   document.querySelector(`#low`).innerHTML = Math.round(
     response.data.main.temp_min
@@ -83,13 +85,19 @@ function displayWeatherParameter(response) {
 }
 
 // Show Entered city
-function getSearchedCity(event) {
-  event.preventDefault();
-  let city = document.querySelector(`#city-name`).value;
+function searchCity(city) {
   let apiKey = "3a6fe3259445cfb2e45add19395f004f";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(url).then(displayWeatherParameter);
 }
+
+function getSearchedCity(event) {
+  event.preventDefault();
+  let cityName = document.querySelector(`#city-name`).value;
+  searchCity(cityName);
+}
+
+searchCity(`Bamenda`);
 
 let searchForm = document.querySelector("#search-city");
 searchForm.addEventListener("submit", getSearchedCity);

@@ -32,7 +32,7 @@
     <div class="container">
       <h1>Weather Loop!🤩</h1>
       <span class="border ml-50">
-        <div class="card section w-auto p-3" style="background-color: #eee">
+        <div class="card section w-auto p-3" style="background-color: #d3baba">
           <div class="card-body">
             <div class="position-relative">
               <h3>
@@ -58,16 +58,32 @@
               </h3>
               <div class="position-absolute top-0 end-0">
                 <form class="search-city" id="search-city">
-                  <input
-                    type="text"
-                    id="city-name"
-                    placeholder="Enter city"
-                    autofocus
-                  />
-                  <input type="submit" value="search" />
-                  <button class="btn btn-success" id="current-location-button">
-                    Current
-                  </button>
+                  <div class="row">
+                    <div class="col-9">
+                      <input
+                        type="text"
+                        id="city-name"
+                        placeholder="Enter city..."
+                        class="form-control"
+                        autofocus
+                      />
+                    </div>
+                    <div class="col-3">
+                      <input
+                        type="submit"
+                        value="search"
+                        class="btn btn-primary w-100"
+                      />
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-success mt-3"
+                        id="current-location-button"
+                      >
+                        Current
+                      </button>
+                    </div>
+                  </div>
                 </form>
               </div>
             </div>
@@ -76,22 +92,22 @@
             <br />
             <h2>
               <strong
-                ><span id="city">Turku</span>, <span id="country">FI</span>
+                ><span id="city">-</span> <span id="country">-</span>
               </strong>
             </h2>
             <p id="date">
-              <span class="date">Friday, 21 May</span> <br /><span id="time"
-                >15:00</span
+              <span class="date">Day, date month</span> <br /><span id="time"
+                >00:00</span
               >
             </p>
             <img
-              src="http://openweathermap.org/img/wn/01d@2x.png"
+              src="https://openweathermap.org/img/wn/01d@2x.png"
               alt="icon"
               id="icon"
             />
 
             <br />
-            <span id="description">sunny</span>
+            <span id="description">description</span>
 
             <ul class="list-inline">
               <li class="list-inline-item">
@@ -135,25 +151,25 @@
                   </div>
                   <div class="col">
                     Precipitation <br />
-                    <span id="precipitation">0,5</span>cm
+                    <span id="precipitation">0</span>cm
                   </div>
                   <div class="col">
                     Humidity <br />
-                    <span id="humidity">43</span>%
+                    <span id="humidity">0</span>%
                   </div>
                 </div>
                 <div class="row">
                   <div class="col">
                     Sunset <br />
-                    <span id="sunset">22:45</span>
+                    <span id="sunset">00:00</span>
                   </div>
                   <div class="col">
                     Chance of rain <br />
-                    <span id="chance-rain">10</span>%
+                    <span id="chance-rain">0</span>%
                   </div>
                   <div class="col">
                     Wind <br />
-                    <span id="wind">4</span>m/s
+                    <span id="wind">0</span>m/s
                   </div>
                 </div>
               </div>
