@@ -43,14 +43,17 @@ function formatDate(date) {
   return `${day}, ${dates} ${month}<br>${hours}:${minutes}`;
 }
 
-let currentTime = new Date();
-let todaysDate = document.querySelector(`#date`);
-todaysDate.innerHTML = formatDate(currentTime);
+//let currentTime = new Date();
+//let todaysDate = document.querySelector(`#date`);
+//todaysDate.innerHTML = formatDate(currentTime);
 
 // Show Weather Conditions
 function displayWeatherParameter(response) {
   document.querySelector(`#city`).innerHTML = response.data.name;
   document.querySelector(`#country`).innerHTML = response.data.sys.country;
+  document.querySelector(`#date`).innerHTML = formatDate(
+    response.data.dt * 1000
+  );
   document.querySelector(`#temperature`).innerHTML = Math.round(
     response.data.main.temp
   );
