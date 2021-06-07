@@ -35,30 +35,6 @@
         <div class="card section w-auto p-3" style="background-color: #d3baba">
           <div class="card-body">
             <div class="position-relative">
-              <h3>
-                <span
-                  class="
-                    choose-temperature
-                    position-absolute
-                    top-0
-                    start-0
-                    lh-1
-                    border border-2
-                    rounded
-                    border-secondary
-                  "
-                  ><a
-                    href="#"
-                    class="active text-decoration-none"
-                    id="celsius-link"
-                    >°C</a
-                  >
-                  |
-                  <a href="#" class="text-decoration-none" id="fahrenheit-link"
-                    >°F</a
-                  ></span
-                >
-              </h3>
               <div class="position-absolute top-0 end-0">
                 <form class="search-city" id="search-city">
                   <div class="row">
@@ -103,6 +79,7 @@
                 >00:00</span
               >
             </p>
+
             <img
               src="https://openweathermap.org/img/wn/01d@2x.png"
               alt="icon"
@@ -112,17 +89,24 @@
             <br />
             <span id="description">description</span>
 
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                Low <br /><span id="low">0</span>°
-              </li>
+            <ul class="main-temp">
               <li class="list-inline-item main-temperature">
                 <strong><span id="temperature">0</span></strong
-                >°
+                ><span class="choose-temperature"
+                  ><a
+                    href="#"
+                    class="active text-decoration-none"
+                    id="celsius-link"
+                    >°C</a
+                  >
+                  |
+                  <a href="#" class="text-decoration-none" id="fahrenheit-link"
+                    >°F</a
+                  ></span
+                >
               </li>
-              <li class="list-inline-item">
-                High <br />
-                <span id="high">0</span>°
+              <li class="min-max">
+                L:<span id="low">0</span>° H:<span id="high">0</span>°
               </li>
             </ul>
 
@@ -149,30 +133,22 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col">
-                    Sunrise <br />
-                    <span id="sunrise">04:12</span>
-                  </div>
-                  <div class="col">
-                    Precipitation <br />
-                    <span id="precipitation">0</span>cm
-                  </div>
-                  <div class="col">
                     Humidity <br />
                     <span id="humidity">0</span>%
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    Sunset <br />
-                    <span id="sunset">00:00</span>
-                  </div>
-                  <div class="col">
-                    Chance of rain <br />
-                    <span id="chance-rain">0</span>%
                   </div>
                   <div class="col">
                     Wind <br />
                     <span id="wind">0</span>m/s
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    Sunrise <br />
+                    <span id="sunrise">04:12</span>
+                  </div>
+                  <div class="col">
+                    Sunset <br />
+                    <span id="sunset">00:00</span>
                   </div>
                 </div>
               </div>
