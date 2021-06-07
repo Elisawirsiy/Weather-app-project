@@ -30,64 +30,70 @@
   </head>
   <body>
     <div class="container">
-      <h1>Weather Loop!🤩</h1>
-      <span class="border ml-50">
-        <div class="card section w-auto p-3" style="background-color: #d3baba">
-          <div class="card-body">
-            <div class="position-relative">
-              <div class="position-absolute top-0 end-0">
-                <form class="search-city" id="search-city">
-                  <div class="row">
-                    <div class="col-9">
-                      <input
-                        type="text"
-                        id="city-name"
-                        placeholder="Enter city..."
-                        class="form-control"
-                        autofocus
-                      />
-                    </div>
-                    <div class="col-3">
-                      <input
-                        type="submit"
-                        value="search"
-                        class="btn btn-primary w-100"
-                      />
-                    </div>
-                    <div class="col-3">
-                      <button
-                        class="btn btn-success mt-3"
-                        id="current-location-button"
-                      >
-                        Current
-                      </button>
-                    </div>
+      <div class="card section w-auto p-50" style="background-color: #d3baba">
+        <div class="card-body">
+          <h1>Weather Loop!🤩</h1>
+          <div class="position-relative">
+            <div class="position top-0 end-0">
+              <form class="search-city" id="search-city">
+                <div class="row">
+                  <div class="col-9">
+                    <input
+                      type="text"
+                      id="city-name"
+                      placeholder="Enter city..."
+                      class="form-control"
+                      autofocus
+                    />
                   </div>
-                </form>
-              </div>
+                  <div class="col-3">
+                    <input
+                      type="submit"
+                      value="search"
+                      class="btn btn-primary w-100"
+                    />
+                  </div>
+                </div>
+              </form>
             </div>
-            <br />
-            <br />
-            <br />
-            <h2>
-              <strong
-                ><span id="city">-</span> <span id="country">-</span>
-              </strong>
-            </h2>
-            <p id="date">
-              <span class="date">Day, date month</span> <br /><span id="time"
-                >00:00</span
-              >
-            </p>
+          </div>
+          <div class="col current-location-button">
+            <button class="btn btn-success mt-3" id="current-location-button">
+              Location 📍
+            </button>
+          </div>
+          <br />
+          <br />
+          <br />
+          <h2>
+            <strong
+              ><span id="city">-</span> <span id="country">-</span>
+            </strong>
+          </h2>
+          <p id="date">
+            <span class="date">Day, date month</span> <br /><span id="time"
+              >00:00</span
+            >
+          </p>
+          <br />
 
-            <img
-              src="https://openweathermap.org/img/wn/01d@2x.png"
-              alt="icon"
-              id="icon"
-            />
-
-            <br />
-            <span id="description">description</span>
+          <div class="col-6" id="parameters" style="color: rgb(3, 51, 3)">
+            <ul class="parameters">
+              <li>Sunrise:<span id="sunrise">04:12</span></li>
+              <li>Sunset:<span id="sunset">00:00</span></li>
+              <li>Humidity:<span id="humidity">0</span>%</li>
+              <li>Wind:<span id="wind">0</span>m/s</li>
+            </ul>
+          </div>
+          <div class="weather-wrapper">
+            <div class="icon">
+              <img
+                src="https://openweathermap.org/img/wn/01d@2x.png"
+                alt="icon"
+                id="icon"
+              />
+            </div>
+            <div class="description" id="description">description</div>
 
             <ul class="main-temp">
               <li class="list-inline-item main-temperature">
@@ -113,70 +119,41 @@
             <span class="fst-italic feeling"
               >Feels like <span id="feeling">0</span>°
             </span>
+          </div>
+          <br />
+          <br />
+          <div
+            class="alert alert-info"
+            id="alert"
+            role="alert"
+            style="width: 400px"
+          >
+            Remember to stay hydrated!
+          </div>
+          <br />
+          <br />
 
-            <br />
-            <br />
-            <div
-              class="alert alert-info"
-              id="alert"
-              role="alert"
-              style="width: 400px"
-            >
-              It's hot out here, stay hydrated!
+          <div class="row">
+            <div class="col">
+              SAT <br /><i class="fas fa-cloud-sun"></i> <br />
+              6&deg|12&deg
             </div>
-            <br />
-            <br />
-            <div
-              class="card w-400"
-              style="color: rgb(3, 51, 3); background-color: aquamarine"
-            >
-              <div class="card-body">
-                <div class="row">
-                  <div class="col">
-                    Humidity <br />
-                    <span id="humidity">0</span>%
-                  </div>
-                  <div class="col">
-                    Wind <br />
-                    <span id="wind">0</span>m/s
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    Sunrise <br />
-                    <span id="sunrise">04:12</span>
-                  </div>
-                  <div class="col">
-                    Sunset <br />
-                    <span id="sunset">00:00</span>
-                  </div>
-                </div>
-              </div>
+            <div class="col">
+              SUN <br /><i class="fas fa-cloud-rain"></i> <br />
+              5&deg|13&deg
             </div>
-            <br />
-
-            <div class="row">
-              <div class="col">
-                SAT <br /><i class="fas fa-cloud-sun"></i> <br />
-                6&deg|12&deg
-              </div>
-              <div class="col">
-                SUN <br /><i class="fas fa-cloud-rain"></i> <br />
-                5&deg|13&deg
-              </div>
-              <div class="col">
-                MON <br /><i class="fas fa-cloud-rain"></i><br />4&deg|13&deg
-              </div>
-              <div class="col">
-                TUE<br /><i class="fas fa-cloud-rain"></i><br />6&deg|12&deg
-              </div>
-              <div class="col">
-                WED <br /><i class="fas fa-cloud-rain"></i><br />6&deg|14&deg
-              </div>
+            <div class="col">
+              MON <br /><i class="fas fa-cloud-rain"></i><br />4&deg|13&deg
+            </div>
+            <div class="col">
+              TUE<br /><i class="fas fa-cloud-rain"></i><br />6&deg|12&deg
+            </div>
+            <div class="col">
+              WED <br /><i class="fas fa-cloud-rain"></i><br />6&deg|14&deg
             </div>
           </div>
         </div>
-      </span>
+      </div>
     </div>
     <footer>
       <a
