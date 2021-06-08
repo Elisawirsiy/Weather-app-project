@@ -63,7 +63,7 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-//Display Forecast
+// Forecast
 
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -102,7 +102,9 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-// Show Weather Conditions
+
+// Weather Conditions from current weather data API
+
 function displayWeatherParameter(response) {
   document.querySelector(`#city`).innerHTML = response.data.name;
   document.querySelector(`#country`).innerHTML = response.data.sys.country;
@@ -121,9 +123,6 @@ function displayWeatherParameter(response) {
   );
 
   document.querySelector(`#humidity`).innerHTML = response.data.main.humidity;
-  document.querySelector(`#sunrise`).innerHTML = response.data.sys.sunrise;
-
-  document.querySelector(`#sunset`).innerHTML = response.data.sys.sunset;
 
   document.querySelector(`#wind`).innerHTML = Math.round(
     response.data.wind.speed
