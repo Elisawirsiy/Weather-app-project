@@ -84,6 +84,39 @@ function displayWeatherParameter(response) {
     response.data.main.feels_like
   );
 }
+//Display Forecast
+
+function displayForecast(response) {
+  //let forecast = response.data.daily;
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastHTML = `<div class"row">`;
+
+  forecastElement.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+              <div class="weather-forecast-day">SAT</div>
+
+              <img
+                src="https://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                width="42"
+              />
+
+              <div class="weather-forecast-temp">
+                <span class="weather-forecast-max-temp">°</span>|<span
+                  class="weather-forecast-min-temp"
+                  >°</span
+                >
+              </div>
+            </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 // Show Entered city
 function searchCity(city) {
