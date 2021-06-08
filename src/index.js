@@ -1,6 +1,6 @@
 //Date and Time
-function formatDate(date) {
-  let currentTime = new Date();
+function formatDate(timestamp) {
+  let currentTime = new Date(timestamp);
 
   let days = [
     "Sunday",
@@ -72,10 +72,10 @@ function displayForecast(response) {
   forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 6 && index > 0) {
       forecastHTML =
         forecastHTML +
-        `<div class="col-2">
+        `<div class="col">
               <div class="weather-forecast-day">${formatDay(
                 forecastDay.dt
               )}</div>
@@ -199,4 +199,5 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 let celsiusLink = document.querySelector(`#celsius-link`);
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
-searchCity(`Bamenda`);
+// Default city
+searchCity("Kumbo");
