@@ -43,10 +43,59 @@ function formatDate(date) {
   return `${day}, ${dates} ${month}<br>${hours}:${minutes}`;
 }
 
-//let currentTime = new Date();
-//let todaysDate = document.querySelector(`#date`);
-//todaysDate.innerHTML = formatDate(currentTime);
+// Timestamp
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+//Using Onecall api to get coordinates for the forecast
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "3a6fe3259445cfb2e45add19395f004f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
+//Display Forecast
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+              <div class="weather-forecast-day">${forecastDay.dt}</div>
+
+              <img
+                src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+                alt=""
+                width="42"
+              />
+
+              <div class="weather-forecast-temp">
+                <span class="weather-forecast-max-temp">°</span>|<span
+                  class="weather-forecast-min-temp"
+                  >°</span
+                >
+              </div>
+            </div>`;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 // Show Weather Conditions
 function displayWeatherParameter(response) {
   document.querySelector(`#city`).innerHTML = response.data.name;
@@ -83,39 +132,8 @@ function displayWeatherParameter(response) {
   document.querySelector(`#feeling`).innerHTML = Math.round(
     response.data.main.feels_like
   );
-}
-//Display Forecast
 
-function displayForecast(response) {
-  //let forecast = response.data.daily;
-  console.log(response.data.daily);
-  let forecastElement = document.querySelector("#weather-forecast");
-  forecastHTML = `<div class"row">`;
-
-  forecastElement.forEach(function (forecastDay, index) {
-    if (index < 6) {
-      forecastHTML =
-        forecastHTML +
-        `<div class="col-2">
-              <div class="weather-forecast-day">SAT</div>
-
-              <img
-                src="https://openweathermap.org/img/wn/10d@2x.png"
-                alt=""
-                width="42"
-              />
-
-              <div class="weather-forecast-temp">
-                <span class="weather-forecast-max-temp">°</span>|<span
-                  class="weather-forecast-min-temp"
-                  >°</span
-                >
-              </div>
-            </div>`;
-    }
-  });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+  getForecast(response.data.coord);
 }
 
 // Show Entered city
