@@ -33,35 +33,43 @@
       <div class="card section w-auto p-50" style="background-color: #d3baba">
         <div class="card-body">
           <h1>Weather Loop!🤩</h1>
-          <div class="position-relative">
-            <div class="position top-0 end-0">
-              <form class="search-city" id="search-city">
-                <div class="row">
-                  <div class="col-9">
-                    <input
-                      type="text"
-                      id="city-name"
-                      placeholder="Enter city..."
-                      class="form-control"
-                      autofocus
-                    />
-                  </div>
-                  <div class="col-3">
-                    <input
-                      type="submit"
-                      value="search"
-                      class="btn btn-primary w-100"
-                    />
-                  </div>
-                </div>
-              </form>
+
+          <form class="search-city" id="search-city">
+            <div class="row">
+              <div class="col-9 col-md-9">
+                <input
+                  type="text"
+                  id="city-name"
+                  placeholder="Enter city..."
+                  class="form-control"
+                  autofocus
+                />
+              </div>
+              <div class="col-3 col-md-1">
+                <button type="submit" value="search" class="btn btn-primary">
+                  <img
+                    src="src/images/search-solid.svg"
+                    alt=""
+                    width="32"
+                    height="20"
+                  />
+                </button>
+              </div>
+              <div class="col-3 col-md-1 current-location-button">
+                <button
+                  class="btn btn-success mt-3"
+                  id="current-location-button"
+                >
+                  <img
+                    src="src/images/map-pin.svg"
+                    alt=""
+                    width="32"
+                    height="20"
+                  />
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="col current-location-button">
-            <button class="btn btn-success mt-3" id="current-location-button">
-              Location 📍
-            </button>
-          </div>
+          </form>
           <br />
           <br />
           <br />
@@ -74,7 +82,7 @@
             <span class="date"></span> <br /><span id="time">00:00</span>
           </p>
 
-          <div class="col-6" id="parameters" style="color: rgb(3, 51, 3)">
+          <div class="col-2" id="parameters" style="color: rgb(3, 51, 3)">
             <ul class="parameters">
               <li>Humidity:<span id="humidity">0</span>%</li>
               <li>Wind:<span id="wind">0</span>m/s</li>
@@ -116,7 +124,6 @@
             </span>
           </div>
           <br />
-          <br />
           <div
             class="alert alert-info"
             id="alert"
@@ -129,7 +136,16 @@
           <br />
 
           <div
-            class="weather-forecast border border-4 rounded-3"
+            class="
+              weather-forecast
+              border border-4
+              rounded-3
+              shadow-lg
+              p-3
+              mb-5
+              bg-body
+              rounded
+            "
             id="weather-forecast"
           >
             <div class="row">
