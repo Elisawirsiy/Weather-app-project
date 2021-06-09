@@ -40,7 +40,7 @@ function formatDate(timestamp) {
     dates = `0${dates}`;
   }
 
-  return `${day}, ${dates} ${month}<br>${hours}:${minutes}`;
+  return `${day}, ${dates} ${month}<br>Updated at ${hours}:${minutes}`;
 }
 
 // Timestamp

@@ -31,11 +31,17 @@
   <body>
     <div class="container">
       <div class="section" style="background-color: rgba(84, 121, 139, 0.7)">
-        <h1>Weather Loop!🤩</h1>
+        <h1>
+          Weather<img
+            src="src/images/weather_woman.svg"
+            alt=""
+            width="100"
+          />Loop
+        </h1>
 
         <form class="search-city" id="search-city">
           <div class="row">
-            <div class="col-6 col-md-9">
+            <div class="col-6 col-md-8">
               <input
                 type="text"
                 id="city-name"
@@ -45,7 +51,7 @@
                 autocomplete="off"
               />
             </div>
-            <div class="col-3 col-md-1">
+            <div class="col-3 col-md-2">
               <button
                 type="submit"
                 value="search"
@@ -81,18 +87,19 @@
         <h2>
           <strong><span id="city">-</span> <span id="country">-</span> </strong>
         </h2>
-        <p id="date">
-          <span class="date"></span> <br /><span id="time">00:00</span>
+        <p id="date" class="last-updated">
+          <span class="date"></span> <br />
+          <span id="time">00:00</span>
         </p>
 
-        <div class="col-2" id="parameters" style="color: rgb(3, 51, 3)">
+        <div class="col-3" id="parameters" style="color: rgb(3, 51, 3)">
           <ul class="parameters">
             <li>
-              <i class="fas fa-wind"></i> Wind:<span id="wind">0</span> m/s
+              <i class="fas fa-wind"></i> Wind: <span id="wind">0</span> m/s
             </li>
-            <li>Humidity:<span id="humidity">0</span>%</li>
-            <li>Sunrise:<span id="sunrise">00</span></li>
-            <li>Sunset:<span id="sunset">00</span></li>
+            <li>Humidity: <span id="humidity">0</span>%</li>
+            <li>Sunrise: <span id="sunrise">0</span></li>
+            <li>Sunset: <span id="sunset">0</span></li>
           </ul>
         </div>
 
@@ -122,8 +129,10 @@
               >
             </li>
             <li class="list-inline-item min-max">
-              <i class="fas fa-temperature-high"></i><span id="high">0</span
-              ><i class="fas fa-temperature-low"></i><span id="low">0</span>
+              <i class="fas fa-temperature-high"></i><span id="high">0</span>|<i
+                class="fas fa-temperature-low"
+              ></i
+              ><span id="low">0</span>
             </li>
           </ul>
 

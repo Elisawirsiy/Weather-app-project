@@ -9,7 +9,6 @@ body {
 h1 {
   text-align: center;
   color: rgb(3, 51, 3);
-  /*margin: 0 auto;*/
   margin-top: 15px;
   margin-bottom: 20px;
   font-weight: bolder;
@@ -19,8 +18,8 @@ p {
   text-align: left;
 }
 h2 {
-  /*font-family: "Roboto", sans-serif;*/
-  margin: -60px 0 15px;
+  font-family: "Roboto", sans-serif;
+  margin: -50px 0 15px;
   font-weight: bolder;
 }
 
@@ -31,9 +30,8 @@ ul {
 footer {
   font-size: 14px;
   font-weight: bold;
-  margin-top: -50px;
-  /*margin-bottom: 5px;
-  margin-left: -450px;*/
+  margin-top: -45px;
+  margin-left: -425px;
 }
 
 .section {
@@ -45,16 +43,13 @@ footer {
   margin-bottom: 15px;
   max-width: 800px;
   padding: 0 30px;
-  /*position: relative;*/
 }
 button {
   border-radius: 15px;
   box-shadow: #000 0px 2px 4px 0px;
   border: solid 1px #48829e;
   font-size: 24px;
-  padding: 10px 20px;
   margin: 0 auto;
-  cursor: pointer;
   transition: all 200ms ease-in-out;
 }
 
@@ -62,8 +57,12 @@ button.search-button:hover,
 button.current-location-button:hover {
   background-color: #fff;
   border: solid 2px #48829e;
+  cursor: pointer;
 }
 
+p.last-updated {
+  line-height: 1.5;
+}
 .description {
   font-size: 16px;
   text-transform: capitalize;
@@ -81,7 +80,7 @@ button.current-location-button:hover {
 .min-max {
   margin-top: -20px;
   margin-left: -50px;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .choose-temperature {
@@ -117,11 +116,12 @@ button.current-location-button:hover {
 }
 .weather-forecast-day,
 .weather-forecast-min-temp {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 .notification {
   color: blue;
   display: inline;
   margin-bottom: -100px;
   font-weight: bolder;
+  cursor: default;
 }
