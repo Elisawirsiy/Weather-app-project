@@ -35,7 +35,11 @@ ul {
   margin-right: 150px;
   margin-top: 50px;
 }
-
+/*.description {
+  font-size: 16px;
+  text-transform: capitalize;
+  
+}*/
 .main-temperature {
   font-family: "Roboto", sans-serif;
   font-size: 80px;

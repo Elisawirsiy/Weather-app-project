@@ -103,6 +103,20 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
+// Function to use for readable sunrise & sunset
+
+function formatTime(timestamp) {
+  let time = new Date(timestamp);
+  let hour = time.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = time.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hour}:${minutes}`;
+}
 // Weather Conditions from current weather data API
 
 function displayWeatherParameter(response) {
@@ -116,12 +130,18 @@ function displayWeatherParameter(response) {
     response.data.main.temp
   );
   document.querySelector(`#description`).innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
   document.querySelector(`#icon`).innerHTML = icon.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  document.querySelector(`#sunrise`).innerHTML = formatTime(
+    response.data.sys.sunrise * 1000
+  );
 
+  document.querySelector(`#sunset`).innerHTML = formatTime(
+    response.data.sys.sunset * 1000
+  );
   document.querySelector(`#humidity`).innerHTML = response.data.main.humidity;
 
   document.querySelector(`#wind`).innerHTML = Math.round(
