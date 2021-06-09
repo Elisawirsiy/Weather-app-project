@@ -30,141 +30,134 @@
   </head>
   <body>
     <div class="container">
-      <div class="card section w-auto p-50" style="background-color: #d3baba">
-        <div class="card-body">
-          <h1>Weather Loop!🤩</h1>
+      <div class="section" style="background-color: rgba(84, 121, 139, 0.7)">
+        <h1>Weather Loop!🤩</h1>
 
-          <form class="search-city" id="search-city">
-            <div class="row">
-              <div class="col-9 col-md-9">
-                <input
-                  type="text"
-                  id="city-name"
-                  placeholder="Enter city..."
-                  class="form-control"
-                  autofocus
-                />
-              </div>
-              <div class="col-3 col-md-1">
-                <button type="submit" value="search" class="btn btn-primary">
-                  <img
-                    src="src/images/search-solid.svg"
-                    alt=""
-                    width="32"
-                    height="20"
-                  />
-                </button>
-              </div>
-              <div class="col-3 col-md-1 current-location-button">
-                <button
-                  class="btn btn-success mt-3"
-                  id="current-location-button"
-                >
-                  <img
-                    src="src/images/map-pin.svg"
-                    alt=""
-                    width="32"
-                    height="20"
-                  />
-                </button>
-              </div>
+        <form class="search-city" id="search-city">
+          <div class="row">
+            <div class="col-9 col-md-9">
+              <input
+                type="text"
+                id="city-name"
+                placeholder="Enter city..."
+                class="form-control"
+                autofocus
+              />
             </div>
-          </form>
-          <br />
-          <br />
-          <br />
-          <h2>
-            <strong
-              ><span id="city">-</span> <span id="country">-</span>
-            </strong>
-          </h2>
-          <p id="date">
-            <span class="date"></span> <br /><span id="time">00:00</span>
-          </p>
-
-          <div class="col-2" id="parameters" style="color: rgb(3, 51, 3)">
-            <ul class="parameters">
-              <li>Sunrise:<span id="sunrise">00</span></li>
-              <li>Sunset:<span id="sunset">00</span></li>
-              <li>Humidity:<span id="humidity">0</span>%</li>
-              <li>Wind:<span id="wind">0</span>m/s</li>
-            </ul>
-          </div>
-          <div class="weather-wrapper">
-            <ul class="list-inline main-temp">
-              <li class="description" id="description">description</li>
-              <li class="list-inline-item main-temperature">
-                <span class="icon">
-                  <img
-                    src="https://openweathermap.org/img/wn/01d@2x.png"
-                    alt="icon"
-                    id="icon"
-                  />
-                </span>
-                <strong><span id="temperature">0</span></strong
-                ><span class="choose-temperature"
-                  ><a
-                    href="#"
-                    class="active text-decoration-none"
-                    id="celsius-link"
-                    >°C</a
-                  >
-                  |
-                  <a href="#" class="text-decoration-none" id="fahrenheit-link"
-                    >°F</a
-                  ></span
-                >
-              </li>
-              <li class="min-max">
-                L:<span id="low">0</span>° H:<span id="high">0</span>°
-              </li>
-            </ul>
-
-            <span class="fst-italic feeling"
-              >Feels like <span id="feeling">0</span>°
-            </span>
-          </div>
-          <br />
-          <div
-            class="alert alert-info"
-            id="alert"
-            role="alert"
-            style="width: 400px"
-          >
-            Remember to stay hydrated!
-          </div>
-          <br />
-          <br />
-
-          <div
-            class="
-              weather-forecast
-              border border-4
-              rounded-3
-              shadow-lg
-              p-3
-              mb-5
-              bg-body
-              rounded
-            "
-            id="weather-forecast"
-          >
-            <div class="row">
-              <div class="col-2">
-                <div class="weather-forecast-day">SAT</div>
-
+            <div class="col-3 col-md-1">
+              <button type="submit" value="search" class="btn btn-primary">
                 <img
-                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  src="src/images/search-solid.svg"
                   alt=""
-                  width="42"
+                  width="32"
+                  height="20"
                 />
+              </button>
+            </div>
+            <div class="col-3 col-md-1 current-location-button">
+              <button class="btn btn-success mt-3" id="current-location-button">
+                <img
+                  src="src/images/map-pin.svg"
+                  alt=""
+                  width="32"
+                  height="20"
+                />
+              </button>
+            </div>
+          </div>
+        </form>
+        <br />
+        <br />
+        <br />
+        <h2>
+          <strong><span id="city">-</span> <span id="country">-</span> </strong>
+        </h2>
+        <p id="date">
+          <span class="date"></span> <br /><span id="time">00:00</span>
+        </p>
 
-                <div class="weather-forecast-temp">
-                  <span class="weather-forecast-max-temp">°</span>|<span
-                    class="weather-forecast-min-temp"
-                    >°</span
-                  >
-                </div>
+        <div class="col-2" id="parameters" style="color: rgb(3, 51, 3)">
+          <ul class="parameters">
+            <li>Sunrise:<span id="sunrise">00</span></li>
+            <li>Sunset:<span id="sunset">00</span></li>
+            <li>Humidity:<span id="humidity">0</span>%</li>
+            <li>Wind:<span id="wind">0</span>m/s</li>
+          </ul>
+        </div>
+
+        <div class="weather-wrapper">
+          <ul class="list-inline main-temp">
+            <li class="description" id="description">description</li>
+            <li class="list-inline-item main-temperature">
+              <span class="icon">
+                <img
+                  src="https://openweathermap.org/img/wn/01d@2x.png"
+                  alt="icon"
+                  id="icon"
+                />
+              </span>
+              <strong><span id="temperature">0</span></strong
+              ><span class="choose-temperature"
+                ><a
+                  href="#"
+                  class="active text-decoration-none"
+                  id="celsius-link"
+                  >°C</a
+                >
+                |
+                <a href="#" class="text-decoration-none" id="fahrenheit-link"
+                  >°F</a
+                ></span
+              >
+            </li>
+            <li class="list-inline-item min-max">
+              L:<span id="low">0</span>° H:<span id="high">0</span>°
+            </li>
+          </ul>
+
+          <span class="fst-italic feeling"
+            >Feels like <span id="feeling">0</span>°
+          </span>
+        </div>
+        <br />
+        <div
+          class="alert alert-info"
+          id="alert"
+          role="alert"
+          style="width: 400px"
+        >
+          Remember to stay hydrated!
+        </div>
+        <br />
+        <br />
+        <div
+          class="
+            weather-forecast
+            border border-4
+            rounded-3
+            shadow-lg
+            p-3
+            mb-5
+            bg-body
+            rounded
+          "
+          id="weather-forecast"
+        >
+          <div class="row">
+            <div class="col-2">
+              <div class="weather-forecast-day">SAT</div>
+
+              <img
+                src="https://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+                width="42"
+              />
+
+              <div class="weather-forecast-temp">
+                <span class="weather-forecast-max-temp">°</span>|<span
+                  class="weather-forecast-min-temp"
+                  >°</span
+                >
               </div>
             </div>
           </div>
