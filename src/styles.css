@@ -1,12 +1,7 @@
 body {
   font-family: "PT Mono", monospace;
   text-align: center;
-  /*background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );*/
+  font-weight: bold;
   background-image: url("images/bluesky-sunny.jpg");
   background-size: cover;
 }
@@ -24,8 +19,9 @@ p {
   text-align: left;
 }
 h2 {
-  font-family: "Roboto", sans-serif;
+  /*font-family: "Roboto", sans-serif;*/
   margin: -60px 0 15px;
+  font-weight: bolder;
 }
 
 ul {
@@ -34,30 +30,44 @@ ul {
 }
 footer {
   font-size: 14px;
-
-  /*margin-top: -30px;
-  margin-bottom: 5px;
+  font-weight: bold;
+  margin-top: -50px;
+  /*margin-bottom: 5px;
   margin-left: -450px;*/
 }
 
 .section {
-  /*margin-left: 150px;
-  margin-right: 150px;*/
-  border: solid 5px rgb(238, 174, 202);
+  border: solid 5px rgb(148, 141, 144);
   border-radius: 10px;
   box-shadow: #000 0px 3px 8px 0px;
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 15px;
   max-width: 800px;
-  padding: 0 15px;
-  position: relative;
+  padding: 0 30px;
+  /*position: relative;*/
+}
+button {
+  border-radius: 15px;
+  box-shadow: #000 0px 2px 4px 0px;
+  border: solid 1px #48829e;
+  font-size: 24px;
+  padding: 10px 20px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+button.search-button:hover,
+button.current-location-button:hover {
+  background-color: #fff;
+  border: solid 2px #48829e;
 }
 
 .description {
   font-size: 16px;
   text-transform: capitalize;
-  margin-left: -250px;
+  margin-left: -200px;
   margin-bottom: -30px;
 }
 .main-temperature {
@@ -71,7 +81,7 @@ footer {
 .min-max {
   margin-top: -20px;
   margin-left: -50px;
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .choose-temperature {
@@ -83,6 +93,7 @@ footer {
 .parameters {
   text-align: left;
   line-height: 1.5;
+  color: #fff;
 }
 .active {
   color: black;
@@ -98,8 +109,8 @@ footer {
 
 .feeling {
   text-align: center;
+  color: #bf0077;
   font-size: 16px;
-  font-family: "PT Mono", monospace;
 }
 .weather-forecast {
   margin-top: 50px;
@@ -108,6 +119,9 @@ footer {
 .weather-forecast-min-temp {
   opacity: 0.7;
 }
-.alert-info {
+.notification {
+  color: blue;
   display: inline;
+  margin-bottom: -100px;
+  font-weight: bolder;
 }

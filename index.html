@@ -35,17 +35,22 @@
 
         <form class="search-city" id="search-city">
           <div class="row">
-            <div class="col-9 col-md-9">
+            <div class="col-6 col-md-9">
               <input
                 type="text"
                 id="city-name"
                 placeholder="Enter city..."
                 class="form-control"
                 autofocus
+                autocomplete="off"
               />
             </div>
             <div class="col-3 col-md-1">
-              <button type="submit" value="search" class="btn btn-primary">
+              <button
+                type="submit"
+                value="search"
+                class="btn btn-secondary search-button"
+              >
                 <img
                   src="src/images/search-solid.svg"
                   alt=""
@@ -54,8 +59,11 @@
                 />
               </button>
             </div>
-            <div class="col-3 col-md-1 current-location-button">
-              <button class="btn btn-success mt-3" id="current-location-button">
+            <div class="col-3 col-md-1">
+              <button
+                class="btn btn-success current-location-button"
+                id="current-location-button"
+              >
                 <img
                   src="src/images/map-pin.svg"
                   alt=""
@@ -69,6 +77,7 @@
         <br />
         <br />
         <br />
+
         <h2>
           <strong><span id="city">-</span> <span id="country">-</span> </strong>
         </h2>
@@ -78,10 +87,12 @@
 
         <div class="col-2" id="parameters" style="color: rgb(3, 51, 3)">
           <ul class="parameters">
+            <li>
+              <i class="fas fa-wind"></i> Wind:<span id="wind">0</span> m/s
+            </li>
+            <li>Humidity:<span id="humidity">0</span>%</li>
             <li>Sunrise:<span id="sunrise">00</span></li>
             <li>Sunset:<span id="sunset">00</span></li>
-            <li>Humidity:<span id="humidity">0</span>%</li>
-            <li>Wind:<span id="wind">0</span>m/s</li>
           </ul>
         </div>
 
@@ -111,7 +122,8 @@
               >
             </li>
             <li class="list-inline-item min-max">
-              L:<span id="low">0</span>° H:<span id="high">0</span>°
+              <i class="fas fa-temperature-high"></i><span id="high">0</span
+              ><i class="fas fa-temperature-low"></i><span id="low">0</span>
             </li>
           </ul>
 
@@ -121,12 +133,12 @@
         </div>
         <br />
         <div
-          class="alert alert-info"
+          class="btn btn-outline-dark rounded-pill notification"
           id="alert"
           role="alert"
           style="width: 400px"
         >
-          Remember to stay hydrated!
+          Remember to drink water!
         </div>
         <br />
         <br />
