@@ -31,17 +31,21 @@
   <body>
     <div class="container">
       <div class="section" style="background-color: rgba(84, 121, 139, 0.7)">
-        <h1>
-          Weather<img
-            src="src/images/weather_woman.svg"
-            alt=""
-            width="100"
-          />Loop
-        </h1>
+        <div class="row">
+          <div class="col">
+            <h1>
+              Weather Loop<img
+                src="src/images/weather_woman.svg"
+                alt=""
+                width="100"
+              />
+            </h1>
+          </div>
+        </div>
 
         <form class="search-city" id="search-city">
           <div class="row">
-            <div class="col-6 col-md-8">
+            <div class="col-6 col-sm-8">
               <input
                 type="text"
                 id="city-name"
@@ -51,7 +55,7 @@
                 autocomplete="off"
               />
             </div>
-            <div class="col-3 col-md-2">
+            <div class="col-3 col-sm-2">
               <button
                 type="submit"
                 value="search"
@@ -65,7 +69,7 @@
                 />
               </button>
             </div>
-            <div class="col-3 col-md-1">
+            <div class="col-3 col-sm-2">
               <button
                 class="btn btn-success current-location-button"
                 id="current-location-button"
@@ -91,54 +95,61 @@
           <span class="date"></span> <br />
           <span id="time">00:00</span>
         </p>
-        <div class="row">
-          <div class="col-3" id="parameters" style="color: rgb(3, 51, 3)">
-            <ul class="parameters">
-              <li>Wind: <span id="wind">0</span> Km/h</li>
-              <li>Humidity: <span id="humidity">0</span>%</li>
-              <li>Sunrise: <span id="sunrise">0</span></li>
-              <li>Sunset: <span id="sunset">0</span></li>
-            </ul>
+
+        <div class="weather-wrapper">
+          <div class="row">
+            <div class="col-sm">
+              <ul class="list-inline">
+                <li class="list-inline-item main-temperature">
+                  <span class="icon">
+                    <div class="description" id="description">description</div>
+                    <img
+                      src="https://openweathermap.org/img/wn/01d@2x.png"
+                      alt="icon"
+                      class="icon"
+                      id="icon"
+                    />
+                  </span>
+
+                  <strong
+                    ><span id="temperature" class="temperature">0</span></strong
+                  ><span class="choose-temperature"
+                    ><a
+                      href="#"
+                      class="active text-decoration-none"
+                      id="celsius-link"
+                      >°C</a
+                    >
+                    |
+                    <a
+                      href="#"
+                      class="text-decoration-none"
+                      id="fahrenheit-link"
+                      >°F</a
+                    ></span
+                  >
+                </li>
+                <li class="list-inline-item min-max">
+                  H:<span id="high">0</span>|L:<span id="low">0</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div class="weather-wrapper">
-          <ul class="list-inline main-temp">
-            <li class="description" id="description">description</li>
-            <li class="list-inline-item main-temperature">
-              <span class="icon">
-                <img
-                  src="https://openweathermap.org/img/wn/01d@2x.png"
-                  alt="icon"
-                  id="icon"
-                />
-              </span>
-              <strong><span id="temperature">0</span></strong
-              ><span class="choose-temperature"
-                ><a
-                  href="#"
-                  class="active text-decoration-none"
-                  id="celsius-link"
-                  >°C</a
-                >
-                |
-                <a href="#" class="text-decoration-none" id="fahrenheit-link"
-                  >°F</a
-                ></span
-              >
-            </li>
-            <li class="list-inline-item min-max">
-              <i class="fas fa-temperature-high"></i><span id="high">0</span>|<i
-                class="fas fa-temperature-low"
-              ></i
-              ><span id="low">0</span>
-            </li>
-          </ul>
-
-          <span class="fst-italic feeling"
-            >Feels like <span id="feeling">0</span>°
-          </span>
+        <div class="row">
+          <div class="col-sm-3 parameters" id="parameters">
+            <div>Wind: <span id="wind">0</span> Km/h</div>
+            <div>Humidity: <span id="humidity">0</span>%</div>
+            <div>Sunrise: <span id="sunrise">0</span></div>
+            <div>Sunset: <span id="sunset">0</span></div>
+          </div>
         </div>
+
+        <div class="fst-italic feeling">
+          Feels like <span id="feeling">0</span>°
+        </div>
+
         <br />
         <div
           class="btn btn-outline-dark rounded-pill notification"
@@ -151,20 +162,11 @@
         <br />
         <br />
         <div
-          class="
-            weather-forecast
-            border border-4
-            rounded-3
-            shadow-lg
-            p-3
-            mb-5
-            bg-body
-            rounded
-          "
+          class="weather-forecast border border-4 rounded-3"
           id="weather-forecast"
         >
           <div class="row">
-            <div class="col-2">
+            <div class="col-sm-6">
               <div class="weather-forecast-day">SAT</div>
 
               <img
@@ -182,17 +184,24 @@
             </div>
           </div>
         </div>
+        <footer>
+          <a
+            href="https://github.com/Elisawirsiy/Weather-app-project"
+            class="profile-link"
+            target="_blank"
+            >Open-source code</a
+          >
+          by
+          <a
+            href="https://www.linkedin.com/in/elizabeth-wirsiy-b801aa18/"
+            class="profile-link"
+            target="_blank"
+            >Elizabeth Wirsiy</a
+          >
+        </footer>
       </div>
     </div>
-    <footer>
-      <a
-        href="https://github.com/Elisawirsiy/Weather-app-project"
-        class="source-code"
-        target="_blank"
-        >Open-source code</a
-      >
-      by Elizabeth Wirsiy
-    </footer>
+
     <script src="src/index.js"></script>
   </body>
 </html>
