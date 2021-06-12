@@ -79,11 +79,10 @@ button.current-location-button:hover {
 }
 .weather-temperature strong {
   color: rgb(33, 33, 33);
-  font-size: 70px;
+  font-size: 65px;
   line-height: 1;
   font-weight: 500;
   margin-left: -15px;
-  position: relative;
 }
 .weather-temperature .units {
   position: relative;
