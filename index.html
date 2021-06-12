@@ -42,73 +42,74 @@
             </h1>
           </div>
         </div>
-
-        <form class="search-city" id="search-city">
-          <div class="row">
-            <div class="col-6 col-sm-8">
-              <input
-                type="text"
-                id="city-name"
-                placeholder="Enter city..."
-                class="form-control"
-                autofocus
-                autocomplete="off"
-              />
-            </div>
-            <div class="col-3 col-sm-2">
-              <button
-                type="submit"
-                value="search"
-                class="btn btn-secondary search-button"
-              >
-                <img
-                  src="src/images/search-solid.svg"
-                  alt=""
-                  width="32"
-                  height="20"
+        <div class="weather-app">
+          <form class="mb-3 search-city" id="search-city">
+            <div class="row">
+              <div class="col-6 col-sm-8">
+                <input
+                  type="text"
+                  id="city-name"
+                  placeholder="Enter city..."
+                  class="form-control"
+                  autofocus
+                  autocomplete="off"
                 />
-              </button>
+              </div>
+              <div class="col-3 col-sm-2">
+                <button
+                  type="submit"
+                  value="search"
+                  class="btn btn-secondary search-button"
+                >
+                  <img
+                    src="src/images/search-solid.svg"
+                    alt=""
+                    width="32"
+                    height="20"
+                  />
+                </button>
+              </div>
+              <div class="col-3 col-sm-2">
+                <button
+                  class="btn btn-success current-location-button"
+                  id="current-location-button"
+                >
+                  <img
+                    src="src/images/map-pin.svg"
+                    alt=""
+                    width="32"
+                    height="20"
+                  />
+                </button>
+              </div>
             </div>
-            <div class="col-3 col-sm-2">
-              <button
-                class="btn btn-success current-location-button"
-                id="current-location-button"
-              >
-                <img
-                  src="src/images/map-pin.svg"
-                  alt=""
-                  width="32"
-                  height="20"
-                />
-              </button>
-            </div>
+          </form>
+          <div class="overview">
+            <h2>
+              <strong
+                ><span id="city">-</span> <span id="country">-</span>
+              </strong>
+            </h2>
+            <ul>
+              <li id="date" class="last-updated">
+                <span class="date"></span> <br />
+                <span id="time">00:00</span>
+              </li>
+              <li class="description" id="description">description</li>
+            </ul>
           </div>
-        </form>
-        <br />
-        <br />
-        <br />
 
-        <h2>
-          <strong><span id="city">-</span> <span id="country">-</span> </strong>
-        </h2>
-        <p id="date" class="last-updated">
-          <span class="date"></span> <br />
-          <span id="time">00:00</span>
-        </p>
-        <p class="description" id="description">description</p>
-        <div class="weather-wrapper">
           <div class="row">
             <div class="col-6">
-              <div class="clearfix">
+              <div class="clearfix weather-temperature">
                 <img
                   src="https://openweathermap.org/img/wn/01d@2x.png"
                   alt="icon"
-                  class="float-left icon"
+                  class="float-left"
                   id="icon"
                 />
                 <span class="float-left">
-                  <strong
-                    ><span id="temperature" class="temperature">0</span></strong
+                  <strong><span id="temperature">0</span></strong
                   ><span class="units"
                     ><a
                       href="#"
@@ -130,39 +131,25 @@
                 </p>
               </div>
             </div>
+            <div class="col-6 parameters">
+              <ul>
+                <li>Wind: <span id="wind">0</span> Km/h</li>
+                <li>Humidity: <span id="humidity">0</span>%</li>
+                <li>Sunrise: <span id="sunrise">0</span></li>
+                <li>Sunset: <span id="sunset">0</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="fst-italic feeling">
+            Feels like <span id="feeling">0</span>°
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-6 parameters" id="parameters">
-            <div>Wind: <span id="wind">0</span> Km/h</div>
-            <div>Humidity: <span id="humidity">0</span>%</div>
-            <div>Sunrise: <span id="sunrise">0</span></div>
-            <div>Sunset: <span id="sunset">0</span></div>
-          </div>
-        </div>
-
-        <div class="fst-italic feeling">
-          Feels like <span id="feeling">0</span>°
-        </div>
-
-        <br />
-        <div
-          class="btn btn-outline-dark rounded-pill notification"
-          id="alert"
-          role="alert"
-          style="width: 400px"
-        >
-          Remember to drink water!
-        </div>
-        <br />
-        <br />
         <div
           class="weather-forecast border border-4 rounded-3"
           id="weather-forecast"
         >
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-3">
               <div class="weather-forecast-day">SAT</div>
 
               <img
