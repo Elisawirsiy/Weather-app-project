@@ -95,25 +95,21 @@
           <span class="date"></span> <br />
           <span id="time">00:00</span>
         </p>
-
+        <p class="description" id="description">description</p>
         <div class="weather-wrapper">
           <div class="row">
-            <div class="col-sm">
-              <ul class="list-inline">
-                <li class="list-inline-item main-temperature">
-                  <span class="icon">
-                    <div class="description" id="description">description</div>
-                    <img
-                      src="https://openweathermap.org/img/wn/01d@2x.png"
-                      alt="icon"
-                      class="icon"
-                      id="icon"
-                    />
-                  </span>
-
+            <div class="col-6">
+              <div class="clearfix">
+                <img
+                  src="https://openweathermap.org/img/wn/01d@2x.png"
+                  alt="icon"
+                  class="float-left icon"
+                  id="icon"
+                />
+                <span class="float-left">
                   <strong
                     ><span id="temperature" class="temperature">0</span></strong
-                  ><span class="choose-temperature"
+                  ><span class="units"
                     ><a
                       href="#"
                       class="active text-decoration-none"
@@ -128,11 +124,11 @@
                       >°F</a
                     ></span
                   >
-                </li>
-                <li class="list-inline-item min-max">
+                </span>
+                <p class="min-max">
                   H:<span id="high">0</span>|L:<span id="low">0</span>
-                </li>
-              </ul>
+                </p>
+              </div>
             </div>
           </div>
         </div>
